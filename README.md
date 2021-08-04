@@ -147,38 +147,127 @@ const store = Redux.createStore(messageReducer);§
 
 
 
-
-
 # Item: 4
-## Contexto
-> -
+## Contexto - Use Provider to Connect Redux to React
+> In the last challenge, you created a Redux store to handle the messages array and created an action for adding new messages. The next step is to provide React access to the Redux store and the actions it needs to dispatch updates. React Redux provides its react-redux package to help accomplish these tasks [...]
 
-###### Fonte: 
+###### Fonte: https://www.freecodecamp.org/learn/front-end-libraries/react-and-redux/use-provider-to-connect-redux-to-react
 
 ##Saída Esperada
 ~~~~
-⏳ 
+⏳ The AppWrapper should render.
+
+⏳ The Provider wrapper component should have a prop of store passed to it, equal to the Redux store.
+
+⏳ DisplayMessages should render as a child of AppWrapper.
+
+⏳ The DisplayMessages component should render an h2, input, button, and ul element
 ~~~~
 
 ##Código Solução
 ~~~~
-
+const ADD = 'ADD';
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message
+  }
+};
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.submitMessage = this.submitMessage.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  submitMessage() {  
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        <input
+          value={this.state.input}
+          onChange={this.handleChange}/><br/>
+        <button onClick={this.submitMessage}>Submit</button>
+        <ul>
+          {this.state.messages.map( (message, idx) => {
+              return (
+                 <li key={idx}>{message}</li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  }
+};
+const Provider = ReactRedux.Provider;
+const store = Redux.createStore(messageReducer);
+class AppWrapper extends React.Component {
+  render(){
+    return (
+      <Provider store={store}>
+        <DisplayMessages />
+      </Provider>
+    )
+  }
+};
 ~~~~
+
+
+
 # Item: 5
-## Contexto
-> -
+## Contexto - Map State to Props
+> The Provider component allows you to provide state and dispatch to your React components, but you must specify exactly what state and actions you want. This way, you make sure that each component only has access to the state it needs. You accomplish this by creating two functions: mapStateToProps() and mapDispatchToProps() [...]
 
-###### Fonte: 
+###### Fonte: https://www.freecodecamp.org/learn/front-end-libraries/react-and-redux/map-state-to-props
 
 ##Saída Esperada
 ~~~~
-⏳ 
+⏳ The const state should be an empty array.
+
+mapStateToProps should be a function.
+
+mapStateToProps should return an object.
+
+Passing an array as state to mapStateToProps should return this array assigned to a key of messages.
 ~~~~
 
 ##Código Solução
 ~~~~
-
+const state = [];
+const mapStateToProps = 
+  (state) => {return {messages: state}
+}
 ~~~~
+
 # Item: 6
 ## Contexto
 > -
