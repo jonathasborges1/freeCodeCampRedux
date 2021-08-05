@@ -605,123 +605,21 @@ class AppWrapper extends React.Component {
 ~~~~
 
 # Item: 10 
-## Contexto
-> -
-
-###### Fonte: 
+## Contexto - Moving Forward From Here
+> Congratulations! You finished the lessons on React and Redux. There's one last item worth pointing out before you move on. Typically, you won't write React apps in a code editor like this. This challenge gives you a glimpse of what the syntax looks like if you're working with npm and a file system on your own machine. The code should look similar, except for the use of import statements (these pull in all of the dependencies that have been provided for you in the challenges). The "Managing Packages with npm" section covers npm in more detail. [...]
+ 
+###### Fonte:  https://www.freecodecamp.org/learn/front-end-libraries/react-and-redux/moving-forward-from-here
 
 ##Saída Esperada
 ~~~~
-⏳ 
+⏳ The message Now I know React and Redux! should be logged to the console.
 ~~~~
 
 ##Código Solução
 ~~~~
-
-~~~~
-# Item: 11
-## Contexto
-> -
-
-###### Fonte: 
-
-##Saída Esperada
-~~~~
-⏳ 
+console.log('Now I know React and Redux!')
 ~~~~
 
-##Código Solução
-~~~~
 
-~~~~
-# Item: 12
-## Contexto
-> -
-
-###### Fonte: 
-
-##Saída Esperada
-~~~~
-⏳ 
-~~~~
-
-##Código Solução
-~~~~
-
-~~~~
-# Item: 13
-## Contexto
-> -
-
-###### Fonte: 
-
-##Saída Esperada
-~~~~
-⏳ 
-~~~~
-
-##Código Solução
-~~~~
-
-~~~~
-# Item: 14
-## Contexto
-> -
-
-###### Fonte: 
-
-##Saída Esperada
-~~~~
-⏳ 
-~~~~
-
-##Código Solução
-~~~~
-
-~~~~
-# Item: 15
-## Contexto
-> -
-
-###### Fonte: 
-
-##Saída Esperada
-~~~~
-⏳ 
-~~~~
-
-##Código Solução
-~~~~
-
-~~~~
-# Item: 16
-## Contexto
-> -
-
-###### Fonte: 
-
-##Saída Esperada
-~~~~
-⏳ 
-~~~~
-
-##Código Solução
-~~~~
-
-~~~~
-# Item: 17
-## Contexto
-> -
-
-###### Fonte: 
-
-##Saída Esperada
-~~~~
-⏳ 
-~~~~
-
-##Código Solução
-~~~~
-
-~~~~
-
+Desafio - https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine
+Build a Random Quote Machine
